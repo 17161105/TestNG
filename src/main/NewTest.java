@@ -246,7 +246,7 @@ public class NewTest {
 		driver.findElement(By.linkText("Contacts")).click();
 		NavigationMenu.navMenuOpt(driver, "Projects");
 		NavigationMenu.navMenuOpt(driver, "Tools");
-		//sadfasd
+	
 	}
 		
 
