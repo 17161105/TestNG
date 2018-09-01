@@ -17,6 +17,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.awt.List;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -226,27 +230,23 @@ public class NewTest {
 		QuickCreateTicket.assignedTo(driver, wait, assignedTo);
 		QuickCreateTicket.description(driver, wait, description);
 		CommonMethods.quickCreateFormSave(driver, wait);
-		NavigationMenu.navMenu(driver, wait).click();
-		NavigationMenu.navMenuOpt(driver, "Support");
 
+		NavigationMenu.navMenuForms(driver, wait, "Support", "Tickets");
+		NavigationMenu.searchCriteria(driver, wait, "Ticket Title",title);
+		NavigationMenu.btnSearch(driver, wait);
+		assertTrue(driver.getPageSource().contains(title), "Ticket was not created");
+		System.out.println(driver.getPageSource().contains(title));
 		
 	}
-	@Test(priority =12)
+	@Test
 	public void test() {
-		Actions action = new Actions(driver);
-		NavigationMenu.navMenu(driver, wait).click();
-		NavigationMenu.navMenuOpt(driver, "Marketing");
-		driver.findElement(By.linkText("Contacts")).click();
-/*		NavigationMenu.navMenuOpt(driver, "Sales");
-		action.moveToElement(driver.findElement(By.linkText("Contacts"))).build().perform();
-		NavigationMenu.navMenuOpt(driver, "Inventory");
-		action.moveToElement(driver.findElement(By.linkText("Contacts"))).build().perform();*/
-		NavigationMenu.navMenu(driver, wait).click();
-		NavigationMenu.navMenuOpt(driver, "Support");
-		driver.findElement(By.linkText("Contacts")).click();
-		NavigationMenu.navMenuOpt(driver, "Projects");
-		NavigationMenu.navMenuOpt(driver, "Tools");
-	
+		NavigationMenu.navMenuForms(driver, wait, "Support", "Tickets");
+		NavigationMenu.searchCriteria(driver, wait, "Ticket Title","Ticket 1");
+		NavigationMenu.btnSearch(driver, wait);
+		assertTrue(driver.getPageSource().contains("Ticket 1"), "Ticket was not created");
+		System.out.println(driver.getPageSource().contains("Ticket 1"));
+		driver.findElement(By.linkText("Ticket 1")).getText();
+		assertEquals(driver.findElement(By.linkText("Ticket 1")).getText(), "Ticket 1");
 	}
 		
 

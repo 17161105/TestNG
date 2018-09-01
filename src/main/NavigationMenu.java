@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NavigationMenu {
-	static WebElement navElement;
+	static WebElement navElement=null;
 
 	
 	
@@ -42,10 +42,65 @@ public class NavigationMenu {
 			break;
 		}
 		action.moveToElement(navElement).build().perform();
-	//navElement = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[5]/div[1]/div[2]/div[5]/div[1]"));
-
 	}
 	
+	public static WebElement navMenuOptSub(WebDriver driver, WebDriverWait wait, String navMenuOptionSub) {
+		switch (navMenuOptionSub) {
+		case "Contacts":
+			navElement = driver.findElement(By.linkText("Contacts"));
+			break;
+		case "Organizations":
+			navElement = driver.findElement(By.linkText("Organizations"));
+			break;
+		case "Tickets":
+			navElement = driver.findElement(By.linkText("Tickets"));
+			break;
+		case "FAQ":
+			navElement = driver.findElement(By.linkText("FAQ"));
+			break;
+		case "Service Contracts":
+			navElement = driver.findElement(By.linkText("Service Contracts"));
+			break;
+		default:
+			break;
+		}
+		return navElement;
+	}
+	
+	public static void navMenuForms(WebDriver driver, WebDriverWait wait, String navMenuOption, String navMenuOptSub) {
+		navMenu(driver, wait).click();
+		navMenuOpt(driver, navMenuOption);
+		navMenuOptSub(driver, wait, navMenuOptSub).click();
+	}
+	
+	public static void btnSearch(WebDriver driver, WebDriverWait wait) {
+		
+		driver.findElement(By.xpath("//button[@class='btn btn-success btn-sm']")).click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static void searchCriteria(WebDriver driver, WebDriverWait wait, String searchCriteria, String searchString) {
+		
+		switch (searchCriteria) {
+		case "Ticket Title":
+			navElement = driver.findElement(By.name("ticket_title"));
+			break;
+		case "Ticket Status":
+			navElement = driver.findElement(By.name("ticketstatus"));
+			break;
+		default:
+			break;
+		}
+		navElement.sendKeys(searchString);
+	}
+	public static void table(WebDriver driver, WebDriverWait wait, String ticketTitle) {
+		
+		
+	}
 	
 
 }

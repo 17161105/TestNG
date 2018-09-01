@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="12" total="13" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27660" started-at="2018-08-30T10:49:44Z" finished-at="2018-08-30T10:50:12Z">
+  <suite name="Default suite" duration-ms="22524" started-at="2018-08-31T23:53:20Z" finished-at="2018-08-31T23:53:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27660" started-at="2018-08-30T10:49:44Z" finished-at="2018-08-30T10:50:12Z">
+    <test name="Default test" duration-ms="22524" started-at="2018-08-31T23:53:20Z" finished-at="2018-08-31T23:53:42Z">
       <class name="main.NewTest">
-        <test-method status="PASS" signature="openSite()[pri:0, instance:main.NewTest@3043fe0e]" name="openSite" is-config="true" duration-ms="6663" started-at="2018-08-30T10:49:44Z" finished-at="2018-08-30T10:49:51Z">
+        <test-method status="PASS" signature="openSite()[pri:0, instance:main.NewTest@3043fe0e]" name="openSite" is-config="true" duration-ms="5217" started-at="2018-08-31T23:53:20Z" finished-at="2018-08-31T23:53:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openSite -->
-        <test-method status="PASS" signature="signIn()[pri:0, instance:main.NewTest@3043fe0e]" name="signIn" is-config="true" duration-ms="9548" started-at="2018-08-30T10:49:51Z" finished-at="2018-08-30T10:50:01Z">
+        <test-method status="PASS" signature="signIn()[pri:0, instance:main.NewTest@3043fe0e]" name="signIn" is-config="true" duration-ms="8479" started-at="2018-08-31T23:53:25Z" finished-at="2018-08-31T23:53:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signIn -->
-        <test-method status="PASS" signature="test()[pri:12, instance:main.NewTest@3043fe0e]" name="test" duration-ms="11421" started-at="2018-08-30T10:50:01Z" finished-at="2018-08-30T10:50:12Z">
+        <test-method status="PASS" signature="test()[pri:0, instance:main.NewTest@3043fe0e]" name="test" duration-ms="8812" started-at="2018-08-31T23:53:33Z" finished-at="2018-08-31T23:53:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
